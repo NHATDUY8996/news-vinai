@@ -1,0 +1,47 @@
+.culture__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem
+}
+
+.culture__title {
+  @include fz-40;
+  color: $color-pri;
+}
+
+.btnview {
+  @include fz-15;
+  color: $color-black;
+  border: 1px solid $color-second;
+  padding: 1rem;
+  border-radius: 2rem;
+  color: $color-second;
+}
+
+.btnview:hover {
+  background-color: $color-second;
+  color: $color-white;
+  @include transition;
+}
+
+.culture__body {
+  @include flex-wr;
+}
+
+.culture__item {
+  @include max(768px){
+  @include flex-wr;
+  width: 50%;
+  }
+}
+
+.culture__detail-time {
+  color: $color-text-second;
+  @include fz-10;
+}
+
+.culture__detail-text {
+  @include fz-15;
+  font-weight: bold;
+}
