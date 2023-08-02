@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  transition: opacity 0.3s ease-in-out;
+}
+css
+Copy
+.image-wrapper img,
+.image-wrapper .text {
+  opacity: 0;
+  visibility: hidden;
+}
+.image-wrapper .text1:hover + .img1,
+.img1:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-wrapper .text2:hover + .img2,
+.img2:hover {
+  opacity: 1;
+  visibility: visible;
+}
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img class='img1 show' src="https://vapa.vn/wp-content/uploads/2022/12/anh-3d-thien-nhien.jpeg" alt="Image 1" >
+      <div class="text text1">Text 1</div>
+    </div>
+    <div class="image-wrapper">
+      <img class='img2' src="https://vapa.vn/wp-content/uploads/2022/12/anh-3d-thien-nhien.jpeg" alt="Image 2" >
+      <div class="text text2 show">Text 2</div>
+    </div>
+  </div>
+</body>
+<script>
+const img1 = document.querySelector('.img1');
+const img2 = document.querySelector('.img2');
+const text1 = document.querySelector('.text1');
+const text2 = document.querySelector('.text2');
+
+text1.addEventListener('mouseenter', function() {
+  img1.style.opacity = '1';
+  img1.style.visibility = 'visible';
+  text1.style.opacity = '0';
+  text1.style.visibility = 'hidden';
+});
+text1.addEventListener('mouseleave', function() {
+  img1.style.opacity = '0';
+  img1.style.visibility = 'hidden';
+  text1.style.opacity = '1';
+  text1.style.visibility = 'visible';
+});
+img1.addEventListener('mouseleave', function() {
+  img1.style.opacity = '0';
+  img1.style.visibility = 'hidden';
+  text1.style.opacity = '1';
+  text1.style.visibility = 'visible';
+});
+img1.addEventListener('mouseenter', function() {
+  img1.style.opacity = '1';
+  img1.style.visibility = 'visible';
+  text1.style.opacity = '0';
+  text1.style.visibility = 'hiden';
+});
+text2.addEventListener('mouseenter', function() {
+  img2.style.opacity = '1';
+  img2.style.visibility = 'visible';
+  text2.style.opacity = '0';
+  text2.style.visibility = 'hidden';
+});
+
+img2.addEventListener('mouseleave', function() {
+  img2.style.opacity = '0';
+  img2.style.visibility = 'hidden';
+  text2.style.opacity = '1';
+  text2.style.visibility = 'visible';
+});
+
+</script>
+</html>

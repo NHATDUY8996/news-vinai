@@ -76,6 +76,9 @@
         }
       }
     }
+    .owl-theme.owl-dots{
+      display: none;
+    }
   }
   .pagination{
     @include between-flex;
