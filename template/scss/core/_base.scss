@@ -1,6 +1,6 @@
 @import url("../assets/font/Themify/stylesheet.css");
 @import url("../assets/font/Roboto/stylesheet.css");
-
+@import url('../assets/font/Poppins/stylesheet.css');
 * {
     box-sizing: border-box;
 }
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Poppins';
     font-size: 16px;
     line-height: 1.55;
     font-weight: 400;

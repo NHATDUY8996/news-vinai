@@ -22,10 +22,7 @@
   }
   .container {
     @include flex-wr;
-    justify-content: space-between;
-    align-items: center;
-    
-
+    @include between-flex;
     .line-h {
       width: 1px;
       height: 20vw;
@@ -166,9 +163,7 @@
   }
   .copy__right{
     .mona-design{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include between-flex;
       .line1{
         margin: 0 .5rem;
       }
