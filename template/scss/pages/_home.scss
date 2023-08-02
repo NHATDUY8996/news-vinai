@@ -1,4 +1,5 @@
 .main{
+  overflow: hidden;
   .title-top{
     @include between-flex;
     margin-bottom: 1rem;
@@ -44,6 +45,9 @@
 }
 .lastPost{
   .owl-carousel{
+    .lastPost-text2{
+      width: 100%;
+    }
     .owl-nav{
       right: 0;
       top: -7rem;
@@ -76,12 +80,45 @@
         }
       }
     }
-    .owl-theme.owl-dots{
-      display: none;
-    }
+    
+  }
+  .owl-theme .owl-dots{
+    display: none;
   }
   .pagination{
     @include between-flex;
+    .lastPost-text1{
+      @include fz-10;
+    }
+    .lastPost-text2{
+      @include fz-20;
+      font-weight: bold;
+      @include max(768px){
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+      }
+    }
+    .lastPost-click{
+      cursor: pointer;
+      position: relative;
+      &::after{
+        position: absolute;
+        content: '';
+        width: 90%;
+        height: 1px;
+        background-color: $color-text-second;
+        top: 0;
+      }
+      &.active{
+        color: $color-second;
+        &::after{
+          background-color: $color-second;
+        }
+      }
+    }
   }
 }
 .culture{
@@ -221,4 +258,52 @@
       }
     }
   }
+}
+.aiupdate{
+  .aiupdateSwiper {
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      text-align: center;
+      @include fz-10;
+      background: $color-white;
+      @include mid-flex;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .swiper-button{
+      height: 4rem;
+      width: 4rem;
+      border: 1px solid $color-second;
+      background-color: $color-white;
+      border-radius: 50%;
+      opacity: 0.8;
+      &:hover{
+        opacity: 1;
+        color: $color-white;
+        background-color: $color-second;
+      }
+      &.swiper-button-next{
+        right: -.5rem;
+        &::after{
+          content: '';
+        }
+      }
+      &.swiper-button-prev{
+        left: -.5rem;
+        &::after{
+          content: '';
+        }
+      }
+    }
+  }
+
+
 }
